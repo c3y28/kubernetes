@@ -5,4 +5,4 @@ apt install -qq -y sshpass >/dev/null 2>&1
 sshpass -p "kubeadmin" scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no kmaster.example.com:/joincluster.sh /joincluster.sh 2>/dev/null
 bash /joincluster.sh >/dev/null 2>&1
 
-crictl config runtime-endpoint /run/containerd/containerd.sock
+crictl config runtime-endpoint unix:///run/containerd/containerd.sock

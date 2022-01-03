@@ -94,10 +94,11 @@ echo "[TASK 6] Add apt repo for kubernetes"
 # apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main" >/dev/null 2>&1
 
 echo "[TASK 7] Install Kubernetes components (kubeadm, kubelet and kubectl)"
-apt install -qq -y kubeadm=1.19.15-00 kubelet=1.19.15-00 kubectl=1.19.15-00 >/dev/null 2>&1
-# apt install -qq -y kubeadm=1.20.11-00 kubelet=1.20.11-00 kubectl=1.20.11-00 >/dev/null 2>&1
-# apt install -qq -y kubeadm=1.21.5-00 kubelet=1.21.5-00 kubectl=1.21.5-00 >/dev/null 2>&1
-# apt install -qq -y kubeadm=1.22.2-00 kubelet=1.22.2-00 kubectl=1.22.2-00 >/dev/null 2>&1
+# apt install -qq -y kubeadm=1.19.16-00 kubelet=1.19.16-00 kubectl=1.19.16-00 >/dev/null 2>&1
+# apt install -qq -y kubeadm=1.20.14-00 kubelet=1.20.14-00 kubectl=1.20.14-00 >/dev/null 2>&1
+# apt install -qq -y kubeadm=1.21.8-00 kubelet=1.21.8-00 kubectl=1.21.8-00 >/dev/null 2>&1
+# apt install -qq -y kubeadm=1.22.5-00 kubelet=1.22.5-00 kubectl=1.22.5-00 >/dev/null 2>&1
+apt install -qq -y kubeadm=1.23.1-00 kubelet=1.23.1-00 kubectl=1.23.1-00 >/dev/null 2>&1
 
 # pin their version to avoid upgrade
 apt-mark hold kubelet kubeadm kubectl
