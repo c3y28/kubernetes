@@ -98,7 +98,8 @@ echo "[TASK 7] Install Kubernetes components (kubeadm, kubelet and kubectl)"
 # apt install -qq -y kubeadm=1.20.14-00 kubelet=1.20.14-00 kubectl=1.20.14-00 >/dev/null 2>&1
 # apt install -qq -y kubeadm=1.21.8-00 kubelet=1.21.8-00 kubectl=1.21.8-00 >/dev/null 2>&1
 # apt install -qq -y kubeadm=1.22.5-00 kubelet=1.22.5-00 kubectl=1.22.5-00 >/dev/null 2>&1
-apt install -qq -y kubeadm=1.23.1-00 kubelet=1.23.1-00 kubectl=1.23.1-00 >/dev/null 2>&1
+# apt install -qq -y kubeadm=1.23.9-00 kubelet=1.23.9-00 kubectl=1.23.9-00 >/dev/null 2>&1
+apt install -qq -y kubeadm=1.24.3-00 kubelet=1.24.3-00 kubectl=1.24.3-00 >/dev/null 2>&1
 
 # pin their version to avoid upgrade
 apt-mark hold kubelet kubeadm kubectl
