@@ -35,6 +35,16 @@ apt install -qq -y containerd apt-transport-https >/dev/null 2>&1
 mkdir /etc/containerd
 containerd config default > /etc/containerd/config.toml
 sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+
+[ ! -d /etc/systemd/system/containerd.service.d ] && mkdir /etc/systemd/system/containerd.service.d
+cat <<EOF >/etc/systemd/system/containerd.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=${HTTP_PROXY}"
+Environment="HTTPS_PROXY=${HTTPS_PROXY}"
+Environment="NO_PROXY=${NO_PROXY}"
+EOF
+systemctl daemon-reload
+
 systemctl restart containerd
 systemctl enable containerd >/dev/null 2>&1
 
